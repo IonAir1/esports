@@ -1,60 +1,442 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Esports Connect</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <h1>Esports Connect</h1>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Players</a></li>
-                <li><a href="#">Managers</a></li>
-                <li><a href="#">Organizations</a></li>
-                <li><a href="#">Scrimmages</a></li>
-                <li><a href="#">Tournaments</a></li>
-            </ul>
-        </nav>
-    </header>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			/* General hover effect for links */
+			a:hover {
+				color: #7289da; /* Change text color on hover */
+			}
 
-    <section class="hero">
-        <h2>Connecting Esports Players, Managers, and Organizations</h2>
-        <p>Find players, schedule scrimmages, and organize tournaments with ease.</p>
-        <a href="#signup" class="cta-button">Get Started</a>
-    </section>
+			/* Hover effect for the tournament items */
+			.tournament:hover {
+				background-color: #2c2f33; /* Background color on hover */
+				border-radius: 5px; /* Rounded corners */
+				transition: background-color 0.3s ease; /* Smooth transition */
+			}
 
-    <section id="features">
-        <div class="feature">
-            <h3>Player Profiles</h3>
-            <p>Create a page to showcase your achievements, past performances, and team experiences.</p>
-        </div>
-        <div class="feature">
-            <h3>Easy Scrimmage Scheduling</h3>
-            <p>Organize scrimmages between teams easily with our scrimmage scheduling tool.</p>
-        </div>
-        <div class="feature">
-            <h3>Tournament Recruitment</h3>
-            <p>Managers and organizations can recruit players to form teams for upcoming tournaments.</p>
-        </div>
-    </section>
+			/* Style the scrollbar for the left sidebar */
+			.left-sidebar::-webkit-scrollbar {
+				width: 8px; /* Width of the scrollbar */
+			}
 
-    <section id="signup">
-        <h2>Join Esports Connect</h2>
-        <form action="#" method="POST">
-            <input type="text" placeholder="Username" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Sign Up</button>
-        </form>
-    </section>
+			.left-sidebar::-webkit-scrollbar-track {
+				background: #2c2f33; /* Background of the scrollbar track to match site colors */
+				border-radius: 4px; /* Rounded corners for the scrollbar track */
+			}
 
-    <footer>
-        <p>&copy; 2024 Esports Connect. All rights reserved.</p>
-    </footer>
-</body>
+			.left-sidebar::-webkit-scrollbar-thumb {
+				background: #7289da; /* Color of the scrollbar thumb to match site colors */
+				border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+			}
+
+			.left-sidebar::-webkit-scrollbar-thumb:hover {
+				background: #5b6eae; /* Color of the scrollbar thumb on hover to match site colors */
+			}
+
+			/* Firefox scrollbar styling */
+			.left-sidebar {
+				scrollbar-width: thin; /* Thin scrollbar */
+				scrollbar-color: #7289da #2c2f33; /* Thumb and track color to match site colors */
+			}
+
+			/* Style the scrollbar for the right sidebar */
+			.right-sidebar::-webkit-scrollbar {
+				width: 8px; /* Width of the scrollbar */
+			}
+
+			.right-sidebar::-webkit-scrollbar-track {
+				background: #2c2f33; /* Background of the scrollbar track to match site colors */
+				border-radius: 4px; /* Rounded corners for the scrollbar track */
+			}
+
+			.right-sidebar::-webkit-scrollbar-thumb {
+				background: #7289da; /* Color of the scrollbar thumb to match site colors */
+				border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+			}
+
+			.right-sidebar::-webkit-scrollbar-thumb:hover {
+				background: #5b6eae; /* Color of the scrollbar thumb on hover to match site colors */
+			}
+
+			/* Firefox scrollbar styling */
+			.right-sidebar {
+				scrollbar-width: thin; /* Thin scrollbar */
+				scrollbar-color: #7289da #2c2f33; /* Thumb and track color to match site colors */
+			}
+
+			.seeall {
+				display: inline-block;
+				padding: 10px 20px;
+				margin-top: 10px;
+				background-color: #7289da; /* Match the site's color scheme */
+				color: #fff; /* White text color */
+				text-align: center;
+				text-decoration: none;
+				border-radius: 5px; /* Rounded corners */
+				font-weight: bold;
+				transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+			}
+
+			.seeall:hover {
+				background-color: #5b6eae; /* Darker shade on hover */
+			}
+
+			/* Tournament icon styling */
+			.tournament-icon {
+				width: 40px;
+				height: 40px;
+				margin-right: 10px;
+				border-radius: 50%; /* Make the icon a circle */
+			}
+
+			.tournament-details {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.tournament-placement {
+				font-weight: bold;
+				color: #fff;
+			}
+
+			.tournament-name, .tournament-date {
+				color: #ccc;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-left">
+				<!--img src="images/logo.png" class="logo"-->
+				<h1 class="title">ESPORTS</h1>
+			</div>
+			<div class="nav-right">
+				<div class="search-box">
+					<img src="images/search.png">
+					<input type="text" placeholder="Search">
+				</div>
+				<ul class="navigations">
+					<li class="navigation-button">Explore</li>
+					<li class="navigation-button">Chat</li>
+					<li class="navigation-button">Alerts</li>
+				</ul>
+				<div class="nav-user-icon online" onclick="settingsMenuToggle();">
+					<img src="images/profile-pic.png">
+				</div>
+			</div>
+
+			<div class="settings-menu">
+				<div id="dark-btn">
+					<span></span>
+				</div>
+				<div class="settings-menu-inner">
+					<div class="user-profile">
+						<img src="images/profile-pic.png">
+						<div>
+							<p>John Nicholson</p>
+							<a href="#">See Your Profile</a>
+						</div>
+					</div>
+					<hr>
+					<div class="user-profile">
+						<img src="images/feedback.png">
+						<div>
+							<p>Give Feedback</p>
+							<a href="#">Help us to improve the new design</a>
+						</div>
+					</div>
+					<hr>
+
+					<div class="settings-links">
+						<img src="images/setting.png" class="settings-icon">
+						<a href="#">Settings & Privacy</a>
+						<img src="images/arrow.png" width="10px">
+					</div>
+					<div class="settings-links">
+						<img src="images/help.png" class="settings-icon">
+						<a href="#">Help & Support</a>
+						<img src="images/arrow.png" width="10px">
+					</div>
+					<div class="settings-links">
+						<img src="images/display.png" class="settings-icon">
+						<a href="#">Display & Accessibility</a>
+						<img src="images/arrow.png" width="10px">
+					</div>
+					<div class="settings-links">
+						<img src="images/logout.png" class="settings-icon">
+						<a href="#">Logout</a>
+						<img src="images/arrow.png" width="10px">
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="left-sidebar">
+				<div class="sidebar-group your-profile">
+					<h4>Your Profile</h4>
+					<a href="#">
+						<img src="images/profile-pic.png" alt="Profile Picture">
+						<span>John Nicholson</span>
+						<p class="bio">Gamerrr</p>
+					</a>
+				</div>
+				<div class="sidebar-group recent-history">
+                    <h4>Recent History</h4>
+					<div class="tournament">
+						<img src="images/tournament-icon.png" class="tournament-icon">
+						<div class="tournament-details">
+							<p class="tournament-placement">Champion</p>
+							<p class="tournament-name">Tournament A</p>
+							<p class="tournament-date">January 15, 2024</p>
+						</div>
+					</div>
+					<div class="tournament">
+						<img src="images/tournament-icon.png" class="tournament-icon">
+						<div class="tournament-details">
+							<p class="tournament-placement">3rd Place</p>
+							<p class="tournament-name">Winter Cup</p>
+							<p class="tournament-date">February 20, 2023</p>
+						</div>
+					</div>
+					<div class="tournament">
+						<img src="images/tournament-icon.png" class="tournament-icon">
+						<div class="tournament-details">
+							<p class="tournament-placement">2nd Place</p>
+							<p class="tournament-name">Tournament ABC</p>
+							<p class="tournament-date">January 2, 2023</p>
+						</div>
+					</div>
+					<a href="#" class="seeall">See All</a>
+                </div>
+				<div class="sidebar-group shortcut-links">
+					<h4>Your Groups</h4>
+					<a href="#">
+						<img src="images/shortcut-1.png">
+						Team A sports
+					</a>
+					<a href="#">
+						<img src="images/shortcut-2.png">
+						TEAM B
+					</a>
+					<a href="#">
+						<img src="images/shortcut-3.png">
+						TEAM C
+					</a>
+					<a href="#">
+						<img src="images/shortcut-4.png">
+						TEAM D
+					</a>
+				</div>
+			</div>
+			<div class="main-content">
+				<div class="write-post-container">
+					<div class="user-profile">
+						<img src="images/profile-pic.png">
+						<div>
+							<p>John Nicholson</p>
+							<small>
+								Public
+								<i class="fas fa fa-caret-down"></i>
+							</small>
+						</div>
+					</div>
+					<div class="post-input-container">
+						<textarea rows="3" placeholder="What's on your mind?"></textarea>
+						<button class="post">Post</button>
+					</div>
+				</div>
+				<div class="post-container">
+					<div class="post-row">
+						<div class="user-profile">
+							<img src="images/profile-pic.png">
+							<div>
+								<p>John Nicholson</p>
+								<span>June 21 2021, 13:40</span>
+							</div>
+						</div>
+						<a href="#">
+							<i class="fa fa-ellipsis-v"></i>
+						</a>
+					</div>
+					
+					<p class="post-text"> Looking for players something something <span>@everyone</span>
+						<a href="#">#valorant</a>
+					</p>
+					<img src="images/feed-image-1.png" class="post-img">
+					<div class="post-row">
+						<div class="activity-icons">
+							<div class="activity-icon">
+								<img src="images/like-blue.png">
+								120
+							</div>
+							<div class="activity-icon">
+								<img src="images/comments.png">
+								19
+							</div>
+							<div class="activity-icon">
+								<img src="images/share.png">
+								120
+							</div>
+						</div>
+						<div class="post-profile-icon">
+							<img src="images/profile-pic.png">
+							<i class="fas fa fa-caret-down"></i>
+						</div>
+					</div>
+				</div>
+				<div class="post-container">
+					<div class="post-row">
+						<div class="user-profile">
+							<img src="images/member-2.png">
+							<div>
+								<p>Jackson Aston</p>
+								<span>June 21 2021, 3:40</span>
+							</div>
+						</div>
+						<a href="#">
+							<i class="fa fa-ellipsis-v"></i>
+						</a>
+					</div>
+					
+					<p class="post-text">Like and Share this video with your friends
+						<a href="#">#letstrythis</a>
+						<a href="#">#youtube</a>
+					</p>
+					<img src="images/feed-image-2.png" class="post-img">
+					<div class="post-row">
+						<div class="activity-icons">
+							<div class="activity-icon">
+								<img src="images/like.png">
+								120
+							</div>
+							<div class="activity-icon">
+								<img src="images/comments.png">
+								19
+							</div>
+							<div class="activity-icon">
+								<img src="images/share.png">
+								120
+							</div>
+						</div>
+						<div class="post-profile-icon">
+							<img src="images/profile-pic.png">
+							<i class="fas fa fa-caret-down"></i>
+						</div>
+					</div>
+				</div>
+				<div class="post-container">
+					<div class="post-row">
+						<div class="user-profile">
+							<img src="images/profile-pic.png">
+							<div>
+								<p>John Nicholson</p>
+								<span>June 21 2021, 13:40</span>
+							</div>
+						</div>
+						<a href="#">
+							<i class="fa fa-ellipsis-v"></i>
+						</a>
+					</div>
+					
+					<p class="post-text">Subscribe <span>@LetsTryThis</span> YouTube Channel to watch more videos on website development and UI Designs.
+						<a href="#">#letstrythis</a>
+						<a href="#">#youtube</a>
+					</p>
+					<img src="images/feed-image-3.png" class="post-img">
+					<div class="post-row">
+						<div class="activity-icons">
+							<div class="activity-icon">
+								<img src="images/like.png">
+								120
+							</div>
+							<div class="activity-icon">
+								<img src="images/comments.png">
+								19
+							</div>
+							<div class="activity-icon">
+								<img src="images/share.png">
+								120
+							</div>
+						</div>
+						<div class="post-profile-icon">
+							<img src="images/profile-pic.png">
+							<i class="fas fa fa-caret-down"></i>
+						</div>
+					</div>
+				</div>
+				<button type="button" class="load-more-btn">Load More</button>
+			</div>
+			<div class="right-sidebar">
+				<div class="sidebar-title">
+					<h4>Events</h4>
+					<a href="#">See All</a>
+				</div>
+				<div class="event">
+					<div class="left-event">
+						<h3>18</h3>
+						<span>March</span>
+					</div>
+					<div class="right-event">
+						<h4>Winter Cup 2024</h4>
+						<p>
+							<i class="fa fa-map-marker"></i>
+							SMX Arena, Philippines
+						</p>
+						<a href="#">More Info</a>
+					</div>
+				</div>
+				<div class="event">
+					<div class="left-event">
+						<h3>22</h3>
+						<span>June</span>
+					</div>
+					<div class="right-event">
+						<h4>ABCD Tourney</h4>
+						<p>
+							<i class="fa fa-map-marker"></i>
+							Antartica
+						</p>
+						<a href="#">More Info</a>
+					</div>
+				</div>
+
+				<div class="sidebar-title">
+					<h4>Advertisement</h4>
+					<a href="#">Close</a>
+				</div>
+				<img src="images/advertisement.png" class="sidebar-ads">
+
+				<div class="sidebar-title">
+					<h4>Conversation</h4>
+					<a href="#">Hide Chat</a>
+				</div>
+				<div class="online-list">
+					<div class="online">
+						<img src="images/member-1.png">
+					</div>
+					<p>Alison Mina</p>
+				</div>
+				<div class="online-list">
+					<div class="online">
+						<img src="images/member-2.png">
+					</div>
+					<p>Jackson Aston</p>
+				</div>
+				<div class="online-list">
+					<div class="online">
+						<img src="images/member-3.png">
+					</div>
+					<p>Samona Rose</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>Copyright 2024 - gwafgsdf</p>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
 </html>
