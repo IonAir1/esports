@@ -10,50 +10,120 @@
 <body>
     <header>
         <nav>
-            <h1>Esports Connect</h1>
-            <div class="search-bar">
-                <input type="text" placeholder="Search players, tournaments...">
-                <button type="submit">Search</button>
-            </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Messages</a></li>
-                <li><a href="#">Connect</a></li>
-            </ul>
+            <h1>Esports shits</h1>
+                <div class="right-header">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search players, tournaments, scrimmages...">
+                        <button class="submit" type="submit">Search</button>
+                    </div>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Explore</a></li>
+                        <li><a href="#">Chat</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#"><img id="settings-icon" src="assets/settings.png"/></a></li>
+                    </ul>
+                </div>
         </nav>
     </header>
 
     <main>
-        <section class="profile-section">
-            <h2>Your Profile</h2>
-            <img src="profile-pic.jpg" alt="Profile Picture">
-            <h3>Username</h3>
-            <p>Achievements: Champion of XYZ Tournament, Top 10 in ABC League</p>
-            <button>Edit Profile</button>
+        <section class="section" id="profile-section">
+            <img class="profile-pic" src="assets/sample/profile-pic.png" alt="Profile Picture">
+            <h2>Dela Cruz, Juan</h2>
+            <div id="history">
+                <h3>History:</h3>
+                <ul class="history-items">
+                    <div class="post">
+                        <h3 class="post-title">Winter Cup 2024</h3>
+                        <p class="post-date">December 15, 2024</p>
+                        <p class="post-desc">Champion</p>
+                    </div>
+                    <div class="post">
+                        <h3 class="post-title">hdfio Tournament 2024</h3>
+                        <p class="post-date">December 15, 2024</p>
+                        <p class="post-desc">3rd place</p>
+                    </div>
+                    <div class="post">
+                        <h3 class="post-title">abc Tourney 2024</h3>
+                        <p class="post-date">December 15, 2024</p>
+                        <p class="post-desc">2nd place</p>
+                    </div>
+
+                </ul>
+            </div>
+            <button class="submit">Edit Profile</button>
         </section>
 
-        <section class="posts-section">
+        <section class="section" id="posts-section">
             <h2>Latest Posts</h2>
             <div class="post">
-                <h3>Upcoming Tournament: Winter Cup 2024</h3>
-                <p>Date: December 15, 2024</p>
-                <p>Join the Winter Cup and showcase your skills!</p>
-                <button>Join</button>
+                <h3 class="post-title">Upcoming Tournament: Winter Cup 2024</h3>
+                <p class="post-date">December 15, 2024</p>
+                <p class="post-desc">Join the Winter Cup and showcase your skills!</p>
+                <img class="post-img" src="assets/sample/post-1.png"/>
+                <div class="interact-row">
+                    <button class="join-button">Join</button>
+                    <div class="interaction-section">
+                        <a href="#" class="interaction-button" id="like-button">
+                            <img class="interaction-icon" src="assets/like.png"/>
+                        </a>
+                
+                        <a href="#" class="interaction-button" id="comment-button">
+                            <img class="interaction-icon" src="assets/comment.png"/>
+                        </a>
+                
+                        <a href="#" class="interaction-button" id="share-button">
+                            <img class="interaction-icon" src="assets/share.png"/>
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="post">
-                <h3>Recruitment: Looking for Mid-Laner</h3>
-                <p>We need an experienced mid-laner for the upcoming championships.</p>
-                <button>Apply</button>
+                <h3 class="post-title">Recruitment: Looking for Mid-Laner</h3>
+                <p class="post-desc">We need an experienced mid-laner for the upcoming championships.</p>
+                <img class="post-img" src="assets/sample/post-2.png"/>
+                <div class="interact-row">
+                    <button class="join-button">Join</button>
+                    <div class="interaction-section">
+                        <a href="#" class="interaction-button" id="like-button">
+                            <img class="interaction-icon" src="assets/like.png"/>
+                        </a>
+                
+                        <a href="#" class="interaction-button" id="comment-button">
+                            <img class="interaction-icon" src="assets/comment.png"/>
+                        </a>
+                
+                        <a href="#" class="interaction-button" id="share-button">
+                            <img class="interaction-icon" src="assets/share.png"/>
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="post">
-                <h3>Scrimmage: Team Red vs. Team Blue</h3>
-                <p>Date: November 10, 2024</p>
-                <button>Join Scrimmage</button>
+                <h3 class="post-title">Scrimmage: Team Red vs. Team Blue</h3>
+                <p class="post-desc">November 10, 2024</p>
+                <img class="post-img" src="assets/sample/post-3.png"/>
+                <div class="interact-row">
+                    <button class="join-button">Join</button>
+                    <div class="interaction-section">
+                        <a href="#" class="interaction-button" id="like-button">
+                            <img class="interaction-icon" src="assets/like.png"/>
+                        </a>
+                
+                        <a href="#" class="interaction-button" id="comment-button">
+                            <img class="interaction-icon" src="assets/comment.png"/>
+                        </a>
+                
+                        <a href="#" class="interaction-button" id="share-button">
+                            <img class="interaction-icon" src="assets/share.png"/>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="chat-section">
+        <!--section class="section" id="chat-section">
             <h2>Chat</h2>
             <div class="chat-box">
                 <div class="message">
@@ -88,7 +158,7 @@
                     <button>Connect</button>
                 </div>
             </div>
-        </section>
+        </section-->
     </main>
 
     <footer>
