@@ -137,22 +137,22 @@ nav{
 }
 
 .left-sidebar::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Background of the scrollbar track */
+    background: var(--bg-color); /* Background of the scrollbar track to match site colors */
 }
 
 .left-sidebar::-webkit-scrollbar-thumb {
-    background: #c1c1c1; /* Color of the scrollbar thumb */
+    background: var(--nav-color); /* Color of the scrollbar thumb to match nav color */
     border-radius: 4px; /* Rounded corners for the scrollbar thumb */
 }
 
 .left-sidebar::-webkit-scrollbar-thumb:hover {
-    background: #a8a8a8; /* Color of the scrollbar thumb on hover */
+    background: #5b6eae; /* Color of the scrollbar thumb on hover */
 }
 
-/* Firefox scrollbar styling */
+/* Firefox scrollbar styling for left sidebar */
 .left-sidebar {
     scrollbar-width: thin; /* Thin scrollbar */
-    scrollbar-color: #c1c1c1 #f1f1f1; /* Thumb and track color */
+    scrollbar-color: var(--nav-color) var(--bg-color); /* Thumb and track color to match site colors */
 }
 
 .right-sidebar{
@@ -173,24 +173,23 @@ nav{
     width: 8px; /* Width of the scrollbar */
 }
 
+.right-sidebar::-webkit-scrollbar {
+	width: 8px; /* Width of the scrollbar */
+}
+
 .right-sidebar::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Background of the scrollbar track */
+	background: var(--bg-color); /* Background of the scrollbar track to match site colors */
 }
 
 .right-sidebar::-webkit-scrollbar-thumb {
-    background: #c1c1c1; /* Color of the scrollbar thumb */
-    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+	background: var(--nav-color); /* Color of the scrollbar thumb to match nav color */
+	border-radius: 4px; /* Rounded corners for the scrollbar thumb */
 }
 
 .right-sidebar::-webkit-scrollbar-thumb:hover {
-    background: #a8a8a8; /* Color of the scrollbar thumb on hover */
+	background: #5b6eae; /* Color of the scrollbar thumb on hover */
 }
 
-/* Firefox scrollbar styling */
-.right-sidebar {
-    scrollbar-width: thin; /* Thin scrollbar */
-    scrollbar-color: #c1c1c1 #f1f1f1; /* Thumb and track color */
-}
 .main-content{
     width: 47%;
 }
@@ -224,17 +223,18 @@ nav{
     font-size: 14px;
 }
 
+/* See All button styles */
 .seeall {
     display: inline-block;
     padding: 5px 10px;
-    margin-top: 5px;
-    background-color: var(--nav-color); /* Match the site's color scheme */
+    background-color: var(--nav-color); /* Match the site's nav color */
     color: #fff; /* White text color */
     text-align: center;
     text-decoration: none;
     border-radius: 5px; /* Rounded corners */
     font-weight: bold;
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
 .seeall:hover {
