@@ -355,6 +355,74 @@ h4{
 	transition: background-color 0.3s ease; /* Smooth transition */
 }
 
+/* General styles */
+.container {
+	display: flex;
+	justify-content: space-between;
+	padding: 13px 5%;
+}
+
+.left-sidebar, .right-sidebar {
+	flex-basis: 25%;
+	position: sticky;
+	top: 70px;
+	align-self: flex-start;
+	overflow-y: auto; /* Enable vertical scrolling */
+	height: calc(100vh - 70px); /* Ensure it takes the full height minus the sticky top */
+}
+
+.main-content {
+	width: 47%;
+}
+
+/* Hover effect for tournament items */
+.tournament:hover {
+	background-color: #2c2f33; /* Background color on hover */
+	border-radius: 5px; /* Rounded corners */
+	transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for shortcut links */
+.shortcut-links a:hover {
+	background-color: #2c2f33; /* Background color on hover */
+	border-radius: 5px; /* Rounded corners */
+	transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* See All button styles */
+.seeall {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: var(--nav-color); /* Match the site's nav color */
+	color: #fff; /* White text color */
+	text-align: center;
+	text-decoration: none;
+	border-radius: 5px; /* Rounded corners */
+	font-weight: bold;
+	transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+	cursor: pointer; /* Pointer cursor on hover */
+}
+
+.seeall:hover {
+	background-color: #5b6eae; /* Darker shade on hover */
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+	.container {
+		flex-direction: column;
+		padding: 10px;
+	}
+
+	.left-sidebar, .right-sidebar {
+		display: none; /* Hide sidebars on mobile */
+	}
+
+	.main-content {
+		width: 100%; /* Full width for main content */
+	}
+}
+
 .activity-icon:hover {
 	background-color: #2c2f33; /* Background color on hover */
 	border-radius: 5px; /* Rounded corners */
