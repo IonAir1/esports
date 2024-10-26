@@ -256,8 +256,82 @@ nav .nav-right{
     color: #f5f5f5;
 }
 
+.groups-friends-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.your-groups, .your-friends {
+    flex: 1;
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+	color: #f5f5f5;
+}
+
+.your-friends {
+    margin-right: 0; /* Remove margin from the last item */
+}
+
 .main-content{
     width: 73%;
+}
+
+.groups-grid, .friends-grid {
+	margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 10px;
+}
+
+.group, .friend {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.group-picture:hover, .friend-picture:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.group-picture, .friend-picture {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.group-picture {
+	border-radius: 20px;
+}
+
+.friend-picture {
+	border-radius: 50%;
+}
+
+.group-name, .friend-name {
+    font-size: 16px;
+    color: #f5f5f5;
+}
+
+
+.see-all-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: var(--nav-color);
+    color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.see-all-button:hover {
+    background-color: #641d75;
+    transform: scale(1.05);
 }
 
 .tournament {
