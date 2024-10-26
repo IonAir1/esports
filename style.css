@@ -313,7 +313,6 @@ nav .nav-right{
     text-align: center;
     text-decoration: none;
     border-radius: 5px; /* Rounded corners */
-    font-weight: bold;
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
     cursor: pointer; /* Pointer cursor on hover */
 }
@@ -479,7 +478,6 @@ h4{
 	text-align: center;
 	text-decoration: none;
 	border-radius: 5px; /* Rounded corners */
-	font-weight: bold;
 	transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 	cursor: pointer; /* Pointer cursor on hover */
 }
