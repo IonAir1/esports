@@ -201,78 +201,21 @@ nav .nav-right{
     justify-content: space-between;
     padding: 13px 5%;
 }
-.left-sidebar{
-    flex-basis: 25%;
-    position: sticky;
-    top: 20px;
-	background: var(--bg-color);
-	padding:20px;
-    border-radius: 4px;
-    align-self: flex-start;
-    overflow-y: auto; /* Enable vertical scrolling */
-    height: calc(100vh - 70px); /* Ensure it takes the full height minus the sticky top */
-}
-/* Style the scrollbar for the left sidebar */
-.left-sidebar::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-}
-
-.left-sidebar::-webkit-scrollbar-track {
-    background: var(--bg-color); /* Background of the scrollbar track to match site colors */
-}
-
-.left-sidebar::-webkit-scrollbar-thumb {
-    background: var(--nav-color); /* Color of the scrollbar thumb to match nav color */
-    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
-}
-
-.left-sidebar::-webkit-scrollbar-thumb:hover {
-    background: #5b6eae; /* Color of the scrollbar thumb on hover */
-}
-
-/* Firefox scrollbar styling for left sidebar */
-.left-sidebar {
-    scrollbar-width: thin; /* Thin scrollbar */
-    scrollbar-color: var(--nav-color) var(--bg-color); /* Thumb and track color to match site colors */
-}
 
 .right-sidebar{
     flex-basis: 25%;
-    position: sticky;
     top: 20px;
     align-self: flex-start;
     background: var(--bg-color);
     padding:20px;
     border-radius: 4px;
     color: #f5f5f5;
-    overflow-y: auto; /* Enable vertical scrolling */
-    height: calc(100vh - 70px); /* Ensure it takes the full height minus the sticky top */
+	overflow: hidden;
 }
 
-/* Style the scrollbar for the right sidebar */
-.right-sidebar::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-}
-
-.right-sidebar::-webkit-scrollbar {
-	width: 8px; /* Width of the scrollbar */
-}
-
-.right-sidebar::-webkit-scrollbar-track {
-	background: var(--bg-color); /* Background of the scrollbar track to match site colors */
-}
-
-.right-sidebar::-webkit-scrollbar-thumb {
-	background: var(--nav-color); /* Color of the scrollbar thumb to match nav color */
-	border-radius: 4px; /* Rounded corners for the scrollbar thumb */
-}
-
-.right-sidebar::-webkit-scrollbar-thumb:hover {
-	background: #5b6eae; /* Color of the scrollbar thumb on hover */
-}
 
 .main-content{
-    width: 47%;
+    width: 73%;
 }
 
 .tournament {
@@ -412,10 +355,29 @@ h4{
 	bottom:0;
 	left:0;
 	width: 100%;
-	background: var(--nav-color);
-	color:#fff;
 	font-size:10px;
 	padding:4px 0;
+}
+
+.first span {
+	background: #fff01d;
+	color:#000000;
+}
+.second span {
+	background: #d5d5d5;
+	color:#000000;
+}
+.third span {
+	background: #a47426;
+	color:#000000;
+}
+.fourth span {
+	background: #b031ff;
+		color:#000000;
+}
+.noreward span {
+	background: #303030;
+	color:#f5f5f5;
 }
 
 .event:hover {
@@ -443,18 +405,6 @@ h4{
 	padding: 13px 5%;
 }
 
-.left-sidebar, .right-sidebar {
-	flex-basis: 25%;
-	position: sticky;
-	top: 70px;
-	align-self: flex-start;
-	overflow-y: auto; /* Enable vertical scrolling */
-	height: calc(100vh - 70px); /* Ensure it takes the full height minus the sticky top */
-}
-
-.main-content {
-	width: 47%;
-}
 
 /* Hover effect for tournament items */
 .tournament:hover {
