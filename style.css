@@ -280,6 +280,7 @@ nav .nav-right{
     align-items: center;
     margin-bottom: 10px;
 	margin-left: 10px;
+	text-decoration: none;
 }
 
 .tournament-icon {
@@ -568,6 +569,7 @@ h4{
 .user-profile{
 	display: flex;
 	align-items: center;
+	text-decoration: none;
 }
 .user-profile img{
 	width:45px;
@@ -766,3 +768,19 @@ h4{
 }
 
 
+.post-video {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+  
+.post-video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}

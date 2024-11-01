@@ -9,3 +9,7 @@ darkBtn.onclick = function(){
 	darkBtn.classList.toggle('dark-btn-on');
 	document.body.classList.toggle('dark-theme');
 }
+
+function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+  }
