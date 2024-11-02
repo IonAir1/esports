@@ -160,6 +160,22 @@ nav .nav-right{
 		margin-left: 15px;
 		margin-right: 15px;
 	}
+
+    .history-center {
+        display: block;
+    }
+
+    .groups-friends-section {
+        flex-direction: column;
+    }
+
+    .your-groups, .your-friends {
+        margin-bottom: 20px;
+    }
+
+	.profile-picture {
+		margin-top: -60px;
+	}
 }
 
 /* Media query for mobile view */
@@ -179,6 +195,12 @@ nav .nav-right{
 @media (max-width: 992px) and (min-width: 768px) {
     nav .search-box {
         width: 50%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (min-width: 769px) {
+    .history-center {
+        display: none;
     }
 }
 
@@ -226,7 +248,7 @@ nav .nav-right{
 .profile-info {
     display: flex;
     align-items: center;
-    margin-top: -50px; /* Adjust to overlap the banner */
+    margin-top: -40px; /* Adjust to overlap the banner */
     padding: 20px;
     background-color: var(--nav-color);
     border-radius: 4px;
@@ -259,21 +281,23 @@ nav .nav-right{
 .groups-friends-section {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
 }
 
-.your-groups, .your-friends {
+.your-groups, .your-friends, .history-center {
     flex: 1;
     background-color: var(--bg-color);
     padding: 20px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-right: 10px;
 	color: #f5f5f5;
 }
 
+.your-groups {
+	margin-right: 5px; /* Add margin between the two items */
+}
+
 .your-friends {
-    margin-right: 0; /* Remove margin from the last item */
+    margin-left: 5px; /* Remove margin from the last item */
 }
 
 .main-content{
@@ -316,6 +340,9 @@ nav .nav-right{
     color: #f5f5f5;
 }
 
+.history-center {
+	margin-bottom: 20px;
+}
 
 .see-all-button {
     display: block;
@@ -628,6 +655,7 @@ h4{
 }
 
 .write-post-container{
+	margin-top: 20px;
 	width: 100%;
 	background:var(--bg-color);
 	border-radius: 6px;
