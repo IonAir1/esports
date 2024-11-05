@@ -6,7 +6,7 @@
 }
 :root{
 	--body-color: #1f1f1f;
-	--nav-color: #641d75;
+	--nav-color: #162780;
 	--bg-color: #141414;
 }
 
@@ -561,7 +561,7 @@ h4{
 	background:var(--bg-color);
 	border-radius: 6px;
 	padding:20px;
-	color: #ac34ca;
+	color: #2B4EFF;
 }
 .user-profile{
 	display: flex;
@@ -591,11 +591,11 @@ h4{
 	resize:none;
 	border:0;
 	outline:0;
-	border-bottom: 1px solid #ac34ca;
+	border-bottom: 1px solid #2B4EFF;
 	background:transparent;
 }
 .post {
-    background-color: #641d75;
+    background-color: #162780;
     color: #f5f5f5;
     padding: 5px 10px;
     border: none;
@@ -635,11 +635,11 @@ h4{
 	font-size: 15px;
 }
 .post-text span{
-	color: #ac34ca;
+	color: #2B4EFF;
 	font-weight: 500;
 }
 .post-text a{
-	color:#ac34ca;
+	color:#2B4EFF;
 	text-decoration: none;
 }
 .post-img{
@@ -710,7 +710,7 @@ h4{
 
 .user-profile a{
 	font-size: 12px;
-	color:#ac34ca;
+	color:#2B4EFF;
 	text-decoration: none;
 }
 .settings-menu-inner{
@@ -809,7 +809,7 @@ h4{
 	color:#000000;
 }
 .fourth span {
-	background: #b031ff;
+	background: #2B4EFF;
 		color:#000000;
 }
 .noreward span {
