@@ -530,11 +530,15 @@ h4{
     margin-bottom: 10px;
 }
 
-.your-profile .bio {
+.prfile-deatils .bio {
     margin-top: 5px;
     font-size: 14px;
-    color: #ccc;
+    color: #f5f5f5; /* Change bio text color to white */
     text-align: center;
+}
+
+.profile-details .bio span {
+    color: #2B4EFF; /* Change tag color to blue */
 }
 
 .online-list{
